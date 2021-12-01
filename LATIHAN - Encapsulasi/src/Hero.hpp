@@ -13,7 +13,9 @@ class Hero{
         double exp;
         double expBase;
         Weapon* weapon;
+        Weapon* weaponDamage;
         Armor* armor;
+        Hero* enemyName;
 
     public:
         Hero(const char*, double, double);
@@ -24,17 +26,25 @@ class Hero{
 
         void getName();
 
+        std::string getNameHero();
+
         double getHealth();
 
         double getExperience();
 
         std::string setName(const char*);
 
+        double healthDecrease();
+
         void equipWeapon(Weapon*);
 
         void equipArmor(Armor*);
 
         void battleInfo();
+
+        std::string enemy(const char*);
+
+        void setStrike(Hero*);
 };
 
 #endif

@@ -1,5 +1,4 @@
 #include "Hero.hpp"
-
 #include <iostream>
 #include <string>
 
@@ -28,6 +27,10 @@ void Hero::getName(){
     std::cout << ", I'am your servant" << std::endl << std::endl;
 }
 
+std::string Hero::getNameHero(){
+    return this->nameHero;
+}
+
 double Hero::getHealth(){
     return this->health;
 }
@@ -40,6 +43,16 @@ std::string Hero::setName(const char *newName){
     this->nameHero = newName;
     std::cout << "Character change to " << newName << std::endl;
     return newName;
+}
+
+double Hero::healthDecrease(double HPStatus){
+    double maxHP = this->health;
+    float enemyDamage = this->weaponDamage;
+    while (true){
+        maxHP - enemyDamage;
+    }
+    
+    
 }
 
 void Hero::equipWeapon(Weapon* weapon){
@@ -57,4 +70,14 @@ void Hero::battleInfo(){
     weapon->weaponInfo();
     armor->armorInfo();
     std::cout << std::endl;
+}
+
+std::string Hero::enemy(const char* enemyName){
+    this->nameHero = enemyName;
+    return enemyName;
+}
+
+void Hero::setStrike(Hero* enemyName){
+    enemyName = this->enemy();
+    std::cout << this->getNameHero() << " menyerang ";
 }
